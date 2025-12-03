@@ -38,9 +38,9 @@ For more specific information about the data generation and processing, please c
 > Relevant scripts are located in: ./figures
 
 ## Downstream Analysis
-DGEA - You can follow our in-house pipeline
-CellChat - You can follow our in-house pipeline  
-Relevant scripts all located in: ./downstream_analysis
+DGEA - You can follow [our in-house pipeline](https://github.com/vijaybioinfo/dgea)  
+CellChat - You can follow our in-house pipeline.  
+>Relevant scripts all located in: ./downstream_analysis
 
 ## Usage & Citation
 If you want to clone this repository run:  
