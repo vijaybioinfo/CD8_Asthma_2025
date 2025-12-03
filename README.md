@@ -34,3 +34,18 @@ For more specific information about the data generation and processing, please c
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
 > Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis  
 
+## Usage & Citation
+If you want to clone this repository run:  
+git clone https://github.com/vijaybioinfo/Asthma_2025.git  
+
+
+## Maintainers
+Current maintainers:  
+
+Emmanuel Castaneda-Castro (fcastaneda@lji.org)  
+Donaldo Sosa-Garcia (donaldo@lji.org)  
+Vijayanand Lab.  
+Division of Vaccine Discovery La Jolla Institute for Immunology La Jolla, CA 92037, USA  
+
+## Contact
+Please email Emmanuel Castaneda-Castro (fcastaneda@lji.org), Donaldo Sosa-Garcia (donaldo@lji.org) and/or Vijayanand Pandurangan (vijay@lji.org).
