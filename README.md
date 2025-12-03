@@ -34,6 +34,14 @@ For more specific information about the data generation and processing, please c
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
 > Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis  
 
+## Figures
+> Relevant scripts are located in: ./figures
+
+## Downstream Analysis
+DGEA - You can follow our in-house pipeline
+CellChat - You can follow our in-house pipeline
+Relevant scripts all located in: ./downstream_analysis
+
 ## Usage & Citation
 If you want to clone this repository run:  
 git clone https://github.com/vijaybioinfo/Asthma_2025.git  
