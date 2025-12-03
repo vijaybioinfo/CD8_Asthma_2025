@@ -44,7 +44,7 @@ Relevant scripts all located in: ./downstream_analysis
 
 ## Usage & Citation
 If you want to clone this repository run:  
-git clone https://github.com/vijaybioinfo/Asthma_2025.git  
+> git clone https://github.com/vijaybioinfo/Asthma_2025.git  
 
 
 ## Maintainers
