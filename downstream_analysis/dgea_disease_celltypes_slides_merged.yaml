@@ -1,0 +1,184 @@
+project: biopsy_5k_disease_celltype_slides_merged
+method: mastlog2cpm
+metadata: /mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/slides_merged_metadata_all_cells_55pct_30pc_with_populations_and_tcells_defined_dec_2_2025.rds
+expression_data: /mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/exp_matrix_slides_merged_all_cells_55pct_30pc_dec_2_2025.rds
+output_dir: /home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe2/re_segmentation/results/dgea
+comparisons:
+  basal:
+    context: basal
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - basal
+  endothelial:
+    context: endothelial
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - endothelial
+  fibroblasts:
+    context: fibroblasts
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - fibroblasts
+  smooth_muscle:
+    context: smooth_muscle
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - smooth_muscle
+  ciliated:
+    context: ciliated
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - ciliated
+  Tcells_all:
+    context: Tcells_all
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - Tcells
+  secretory1:
+    context: secretory1
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - secretory1
+  monocytes:
+    context: monocytes
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - monocytes
+  bcells:
+    context: bcells
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - bcells
+  secretory2:
+    context: secretory2
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - secretory2
+  pericytes:
+    context: pericytes
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - pericytes
+  Mast:
+    context: Mast
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - Mast
+  schwann:
+    context: schwann
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - schwann
+  Chondrocyte:
+    context: Chondrocyte
+    test_column: orig.disease_wo_batch
+    contrast:
+    - Severe.asthma
+    - Mild.asthma
+    - Healthy
+    filters:
+      orig.celltype_wo_b:
+       - Chondrocyte
+  # CD8:
+  #   context: CD8
+  #   test_column: orig.disease_wo_batch
+  #   contrast:
+  #   - Severe.asthma
+  #   - Mild.asthma
+  #   - Healthy
+  #   filters:
+  #     orig.celltype_wo_b:
+  #      - CD8
+  # CD4:
+  #   context: CD4
+  #   test_column: orig.disease_wo_batch
+  #   contrast:
+  #   - Severe.asthma
+  #   - Mild.asthma
+  #   - Healthy
+  #   filters:
+  #     orig.celltype_wo_b:
+  #      - CD4
+# covariates: orig.sex~orig.Age
+# genesetf: ''c(^RPS|^RPL|^MT-)''
+down_sample: no
+padj_threshold: 0.05
+fc_threshold: 0.25
+ctrans: log2cpm
+#colours: ./data/colours_df.csv
+job:
+  template: /home/fcastaneda/bin/cellranger_wrappeR/routine_template_emma2_Slurm.sh
+  main:
+    walltime: '07:00:00'
+    mem: 70gb
+    ppn: 1
+    nodes: 1
+  depend: none
+  submit: yes
+exec: /mnt/hpc-apps/R/4.1.3/bin/Rscript
+script: /home/fcastaneda/bin/dgea/R/dgea_mouse_without_mitand_other_genes_NORE.R
