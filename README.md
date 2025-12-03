@@ -23,12 +23,12 @@ The single-cell RNA-seq raw and processed files from scRNA-seq and spatial trans
 For more specific information about the data generation and processing, please check the "methods" section within the manuscript.  
 
 ### Single-cell RNA-seq
-• To do the 10x demultiplexing and mapping pull our in-house pipeline using Cell Ranger.  
-• To do the donor demultiplexing pull our in-house pipeline.  
-• To do the single-cell quality control pull our in-house pipeline.  
-• To do the doublet detection use our in-house pipeline using Scrublet.  
-• To generate the clustering of single-cell data just pull our in-house pipeline using Seurat.  
-• To do the aggregation of VDJ libraries pull our in-house pipeline.  
+• To do the 10x demultiplexing and mapping pull [our in-house pipeline](https://github.com/vijaybioinfo/cellranger_wrappeR) using Cell Ranger.  
+• To do the donor demultiplexing pull [our in-house pipeline](https://github.com/vijaybioinfo/ab_capture).  
+• To do the single-cell quality control pull [our in-house pipeline](https://github.com/vijaybioinfo/quality_control).  
+• To do the doublet detection use [our in-house pipeline](https://github.com/vijaybioinfo/doublet_detection) using Scrublet.  
+• To generate the clustering of single-cell data just pull [our in-house pipeline](https://github.com/vijaybioinfo/clustering) using Seurat.  
+• To do the aggregation of VDJ libraries pull [our in-house pipeline](https://github.com/vijaybioinfo/VDJ_aggr).  
 
 ### Spatial Transcriptomics
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
