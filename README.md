@@ -22,7 +22,7 @@ The single-cell RNA-seq raw and processed files from scRNA-seq and spatial trans
 ## Raw data pre-processing
 For more specific information about the data generation and processing, please check the "methods" section within the manuscript.  
 
-# Single-cell RNA-seq
+### Single-cell RNA-seq
 • To do the 10x demultiplexing and mapping pull our in-house pipeline using Cell Ranger.  
 • To do the donor demultiplexing pull our in-house pipeline.  
 • To do the single-cell quality control pull our in-house pipeline.  
@@ -31,7 +31,7 @@ For more specific information about the data generation and processing, please c
 • To do the aggregation of VDJ libraries pull our in-house pipeline.  
 > Relevant scripts all located in: ./downstream_analysis
 
-# Spatial Transcriptomics
+### Spatial Transcriptomics
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
 > Relevant scripts all located in: ./downstream_analysis  
 
