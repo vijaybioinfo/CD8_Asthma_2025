@@ -39,7 +39,7 @@ For more specific information about the data generation and processing, please c
 
 ## Downstream Analysis
 DGEA - You can follow our in-house pipeline
-CellChat - You can follow our in-house pipeline
+CellChat - You can follow our in-house pipeline  
 Relevant scripts all located in: ./downstream_analysis
 
 ## Usage & Citation
