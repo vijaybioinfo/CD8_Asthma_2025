@@ -20,6 +20,8 @@ Regarding Spatial transcriptomics analysis, data has been processed following mo
 The single-cell RNA-seq raw and processed files from scRNA-seq and spatial transcriptomics data can be downloaded through the following GEO accession number:  
 
 ## Raw data pre-processing
+For more specific information about the data generation and processing, please check the "methods" section within the manuscript.  
+
 # Single-cell RNA-seq
 • To do the 10x demultiplexing and mapping pull our in-house pipeline using Cell Ranger.  
 • To do the donor demultiplexing pull our in-house pipeline.  
@@ -32,5 +34,4 @@ The single-cell RNA-seq raw and processed files from scRNA-seq and spatial trans
 # Spatial Transcriptomics
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
 > Relevant scripts all located in: ./downstream_analysis  
-For more specific information about the data generation and processing, please check the "methods" section within the manuscript.  
 
