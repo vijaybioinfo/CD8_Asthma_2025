@@ -29,9 +29,8 @@ For more specific information about the data generation and processing, please c
 • To do the doublet detection use our in-house pipeline using Scrublet.  
 • To generate the clustering of single-cell data just pull our in-house pipeline using Seurat.  
 • To do the aggregation of VDJ libraries pull our in-house pipeline.  
-> Relevant scripts all located in: ./downstream_analysis
 
 ### Spatial Transcriptomics
 • To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
-> Relevant scripts all located in: ./downstream_analysis  
+> Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis  
 
