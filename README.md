@@ -22,6 +22,8 @@ The single-cell RNA-seq raw and processed files from scRNA-seq and spatial trans
 ## Raw data pre-processing
 For more specific information about the data generation and processing, please check the "methods" section within the manuscript.  
 
+> Relevant scripts for both 5'v2 scRNA-seq and Spatial Transcriptomics data are all located in: ./pre-processing 
+
 ### Single-cell RNA-seq
 • To do the 10x demultiplexing and mapping pull [our in-house pipeline](https://github.com/vijaybioinfo/cellranger_wrappeR) using Cell Ranger.  
 • To do the donor demultiplexing pull [our in-house pipeline](https://github.com/vijaybioinfo/ab_capture).  
@@ -32,7 +34,6 @@ For more specific information about the data generation and processing, please c
 
 ### Spatial Transcriptomics
 • To generate the clustering of Spatial Transcriptomics data just pull [our in-house pipeline](https://github.com/vijaybioinfo/Xenium-clustering/) using Seurat.  
-> Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis 
 
 ## Figures
 > Relevant scripts are located in: ./figures
