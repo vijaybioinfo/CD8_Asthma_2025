@@ -31,8 +31,8 @@ For more specific information about the data generation and processing, please c
 • To do the aggregation of VDJ libraries pull [our in-house pipeline](https://github.com/vijaybioinfo/VDJ_aggr).  
 
 ### Spatial Transcriptomics
-• To generate the clustering of Spatial Transcriptomics data just pull our in-house pipeline using Seurat.  
-> Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis  
+• To generate the clustering of Spatial Transcriptomics data just pull [our in-house pipeline](https://github.com/vijaybioinfo/Xenium-clustering/) using Seurat.  
+> Relevant scripts for both Spatial Transcriptomics and scRNA-seq data are all located in: ./downstream_analysis 
 
 ## Figures
 > Relevant scripts are located in: ./figures
@@ -50,10 +50,10 @@ If you want to clone this repository run:
 ## Maintainers
 Current maintainers:  
 
-Emmanuel Castaneda-Castro (fcastaneda@lji.org)  
+Francisco Emmanuel Castañeda-Castro (fcastaneda@lji.org)  
 Donaldo Sosa-Garcia (donaldo@lji.org)  
 Vijayanand Lab.  
 Division of Vaccine Discovery La Jolla Institute for Immunology La Jolla, CA 92037, USA  
 
 ## Contact
-Please email Emmanuel Castaneda-Castro (fcastaneda@lji.org), Donaldo Sosa-Garcia (donaldo@lji.org) and/or Vijayanand Pandurangan (vijay@lji.org).
+Please email Francisco Emmanuel Castaneda-Castro (fcastaneda@lji.org), Donaldo Sosa-Garcia (donaldo@lji.org) and/or Vijayanand Pandurangan (vijay@lji.org).
