@@ -1,0 +1,14 @@
+---
+project_name: biop_CD45P
+input_matrix: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/biopBal_Sara_2024/biop/raw/cellranger/aggr/CD45P/outs/aggregation.csv"
+metadata: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/biopBal_Sara_2024//biop/results/qcontrol/biop_CD45P/metadata_prefilter.rds"
+output_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/biopBal_Sara_2024//biop/results/doubdet/CD45P"
+filters:
+  score: 0.3
+  doublet_rate: 0.06
+vars:
+  library: origlib
+  class: orig.HT_ID.global
+  dims: umap
+do_parallel: no
+...
