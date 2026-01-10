@@ -11,7 +11,7 @@ For scRNA-seq data the project has been processed following modules/programs:
 
 Regarding Spatial transcriptomics analysis, data has been processed following modules/programs:  
 • [R](https://cran.r-project.org/) (v4.3.3)  
-• [Cell Ranger](https://www.10xgenomics.com/support/software/xenium-ranger/latest)) (v4.0.1.1)  
+• [Xenium Ranger](https://www.10xgenomics.com/support/software/xenium-ranger/latest) (v4.0.1.1)  
 • [Seurat](https://satijalab.org/seurat/) (v5.1.0)  
 • [phenoptr](https://akoyabio.github.io/phenoptr/) (v0.3.2)
 
