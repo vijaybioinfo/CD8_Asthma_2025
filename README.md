@@ -40,10 +40,13 @@ For more specific information about the data generation and processing, please c
 DGEA - You can follow [our in-house pipeline](https://github.com/vijaybioinfo/dgea)  
 CellChat - You can use our in-house cellchat implementation.  
 
+
+## Quality Control figures
+> Figures diplaying the quality control of our datasets are located in : ./Clustering-QC_figures
+
 ## Usage & Citation
 If you want to clone this repository run:  
 > git clone https://github.com/vijaybioinfo/Asthma_2025.git
-
 
 ## Maintainers
 Current maintainers:  
