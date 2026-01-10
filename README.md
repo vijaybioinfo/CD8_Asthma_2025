@@ -1,4 +1,4 @@
-# CD8_asthma_2025
+# CD8_Asthma_2025
 
 ## Requirements
 For scRNA-seq data the project has been processed following modules/programs:  
