@@ -1,6 +1,6 @@
-project: biopsy_5k_disease_celltype_slides_merged
+project: biopsy_5k_disease_celltype_slides_merged_without_covariates_split_column
 method: mastlog2cpm
-metadata: /mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/slides_merged_metadata_all_cells_55pct_30pc_with_populations_and_tcells_defined_dec_2_2025.rds
+metadata: /mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/slides_merged_metadata_all_cells_55pct_30pc_with_populations_and_tcells_DCs_defined_dec_8_2025.rds
 expression_data: /mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/exp_matrix_slides_merged_all_cells_55pct_30pc_dec_2_2025.rds
 output_dir: /home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe2/re_segmentation/results/dgea
 comparisons:
@@ -12,7 +12,7 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - basal
   endothelial:
     context: endothelial
@@ -22,7 +22,7 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - endothelial
   fibroblasts:
     context: fibroblasts
@@ -32,7 +32,7 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - fibroblasts
   smooth_muscle:
     context: smooth_muscle
@@ -42,7 +42,7 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - smooth_muscle
   ciliated:
     context: ciliated
@@ -52,18 +52,8 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - ciliated
-  Tcells_all:
-    context: Tcells_all
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - Tcells
   secretory1:
     context: secretory1
     test_column: orig.disease_wo_batch
@@ -72,28 +62,8 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - secretory1
-  monocytes:
-    context: monocytes
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - monocytes
-  bcells:
-    context: bcells
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - bcells
   secretory2:
     context: secretory2
     test_column: orig.disease_wo_batch
@@ -102,7 +72,7 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - secretory2
   pericytes:
     context: pericytes
@@ -112,59 +82,9 @@ comparisons:
     - Mild.asthma
     - Healthy
     filters:
-      orig.celltype_wo_b:
+      orig.celltype_tc_dc_wo_b:
        - pericytes
-  Mast:
-    context: Mast
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - Mast
-  schwann:
-    context: schwann
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - schwann
-  Chondrocyte:
-    context: Chondrocyte
-    test_column: orig.disease_wo_batch
-    contrast:
-    - Severe.asthma
-    - Mild.asthma
-    - Healthy
-    filters:
-      orig.celltype_wo_b:
-       - Chondrocyte
-  # CD8:
-  #   context: CD8
-  #   test_column: orig.disease_wo_batch
-  #   contrast:
-  #   - Severe.asthma
-  #   - Mild.asthma
-  #   - Healthy
-  #   filters:
-  #     orig.celltype_wo_b:
-  #      - CD8
-  # CD4:
-  #   context: CD4
-  #   test_column: orig.disease_wo_batch
-  #   contrast:
-  #   - Severe.asthma
-  #   - Mild.asthma
-  #   - Healthy
-  #   filters:
-  #     orig.celltype_wo_b:
-  #      - CD4
-# covariates: orig.sex~orig.Age
+# covariates: orig.sex_wo_b~orig.age_wo_b
 # genesetf: ''c(^RPS|^RPL|^MT-)''
 down_sample: no
 padj_threshold: 0.05
