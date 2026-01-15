@@ -1,0 +1,39 @@
+### config yaml for Spatial transcriptomics
+project_name: SaHe_5k_slide2_monocytes_subclustering
+output_dir: "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe2/re_segmentation/results/clustering/im_subclustering/"
+# path to the Cell Ranger ouput from IGM
+input_expression: "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/outs/"
+metadata:
+  - "/mnt/BioAdHoc/Groups/vd-vijay/donaldo/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/seurat_objects/metadata_slide2_all_cells_50pct_30pc_with_populations_and_tcells_defined_nov_6_2025.rds"
+# metadata_donor:
+  # - "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe2/re_segmentation/info/metadata/metadata_donor.csv~orig.TMA_core"
+filtering:
+  subset:
+    expr: "nCount_Xenium > 3"
+    expre: "orig.celltype_tc_sub == 'monocytes'"
+    # expree: "!orig.orig.donor == 'NIHW_613'"
+  nSamples_expressed: 0.001 # % of cells in which that gene is present
+regress_var: [nCount_Xenium]
+norm: LogNormalize
+variable_features:
+  file: "no_file"
+  method: vst
+  nfeatures: 2000
+  percent: [40, 50, 70, 90, 100]  # iterated
+  mean.cutoff: [0.01, 8]
+  dispersion.cutoff: [1, Inf]
+resolution: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] # iterated during markers
+dim_reduction:
+  base: {type: pca, n_comp: 40, chosen_comp: [10,15,20,30,40]}
+  umap: {n.neighbors: 10, min.dist: 0.1}
+markers:
+  select: snn_res. # pattern in the metadata's columns. Redundant
+  test: MAST
+  avg_logFC: 0.25
+  p_val_adj: 0.05
+  to_plot: ['EPAS1', 'TGFBR2', 'APP', 'IL6ST', 'LIFR', 'PECAM1', 'PDE2A', 'POSTN', 'FZD4', 'CD99', 'HNRNPA1L2', 'MAOA', 'TFPI', 'SH3BP5', 'FAM107A', 'CCL14', 'GAS6', 'AFF1', 'GIMAP5', 'RAPGEF3']
+exec: /mnt/hpc-apps/R/4.3.3/bin/Rscript
+pipeline: /home/fcastaneda/bin/spatial_clustering/
+R_module: R/4.3.3 #if defined, it will use this module version to run the analysis, if not it will use your default
+cluster_config: /home/fcastaneda/bin/spatial_clustering/cluster_slurm.json #HPC resources definition
+conda_env: clustering_env #Compatible with Ciro's clustering env
