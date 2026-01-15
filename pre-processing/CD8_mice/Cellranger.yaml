@@ -1,0 +1,30 @@
+---
+project: "JaSh05_mouse"
+run:
+  - "/mnt/NovaSeq/NV143-IGM"
+  - "/mnt/NovaSeq/NV144-IGM"
+# folder with fastq files output from mkfastq or bcl2fastq; separate by commas if more than one
+fastqs_dir:
+  - "/home/donaldo/bioadhoc/JaSh/raw/NV143"
+  - "/home/donaldo/bioadhoc/JaSh/raw/NV144"
+output_dir: "/home/donaldo/bioadhoc/JaSh/raw/cellranger_2" # created if it doesn't exists
+samples: "JaSh" # sample sheet or a pattern to select samples from 'fastqs_dir'
+transcriptome: # Cell Ranger reference
+  count: "/mnt/BioAdHoc/Groups/vd-vijay/references/refdata-cellranger-mm10-3.0.0"
+  vdj: /mnt/BioAdHoc/Groups/vd-vijay/references/refdata-cellranger-vdj-GRCm38-alts-ensembl-3.1.0
+# You can give a sheet per sample or add a column 'library_pattern' with patterns
+# that can be found in the libraries' names where you used the set of barcodes
+feature_ref:
+  main: "/home/donaldo/bioadhoc/JaSh/info/fbarcodes2_JaSh.csv"
+# Metadata with additional columns prefixed like aggr.NAME_OF_AGGR and values equal to 1
+aggregation: "/home/donaldo/bioadhoc/JaSh/info/metadata_library.csv"
+job: # PBS settings
+  template: "/home/donaldo/bin/cellranger_wrappeR/routine_template_donaldo_Slurm.sh"
+  walltime: {count: 50:00:00, vdj: 40:00:00, fbarcode: 24:00:00, aggr: 24:00:00}
+  mem: {count: 70gb, vdj: 40gb, fbarcode: 32gb, aggr: 30gb}
+  ppn: {count: 10, vdj: 4, fbarcode: 4, aggr: 6}
+  nodes: 1
+  depend: none # job id; jobs will run acter this dependency sucessfully finishes
+  submit: yes
+cellranger: "/mnt/BioApps/cellranger/cellranger-7.0.0/cellranger"
+...
