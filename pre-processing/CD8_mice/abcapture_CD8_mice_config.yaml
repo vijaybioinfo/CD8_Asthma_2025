@@ -1,0 +1,32 @@
+---
+project_id: transfer_ot1
+output_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/results/ab_capture"
+sample_sheet: "no_file"
+# not necessary if you already have a sample_sheet, but this will create it with all feature barcode libraries
+count_info:
+  count_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/raw/cellranger/count"
+  gex_data: filtered
+  fbarcode_data: raw
+demux:
+  max_count_min: 100
+  fold_change: 3
+  subset_tags: random1234
+# empty if you want to aggregate everything; or and aggregate.csv, or
+# path to cellranger aggregations (containing aggr1/outs aggr2/outs); also a regex "sample1|sample2"
+# args is for summary.R (exclude min_count, selected, and tag_str)
+aggregation:
+  source: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/raw/cellranger/aggr"
+  # args: "--metadata=/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/info/metadata_donor.csv~donor" # arguments for summary.R
+# Feature name structure; example is from Placebo-V-TSC5-C0305
+# Always include 'donor' as one of them.
+tag_str: condition~donor
+tag_delim: "-" # string use to separate the information in your hashtag names
+job:
+  walltime: 02:00:00
+  mem: 20gb
+  ppn: 1
+  nodes: 1
+  submit: yes # yes, no, or force
+pipeline: /home/fcastaneda/bin/ab_capture
+exec_r: /mnt/hpc-apps/R/4.1.3/bin/Rscript
+...
