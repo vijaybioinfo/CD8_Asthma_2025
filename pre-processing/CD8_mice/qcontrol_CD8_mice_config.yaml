@@ -1,0 +1,17 @@
+---
+project_name: transfer_ot1_CD8
+# it can even be a CSV file like the one in a Cell Ranger aggregation
+input_expression: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/raw/cellranger/count/JaSh05_Mo_2_CD8_14D_Gex/outs/"
+# A table of the metadata per library, or the whole metadata ready
+# it can be multiple file
+metadata: ["/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/results/ab_capture/transfer_ot1/CD8_JaSh05.rds", "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/info/metadata_library.csv"]
+# if you don't add "/" at the end, it will append 'project_name'
+output_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/results/qcontrol/"
+# A file will sufice; columns must be metrics names in the metadata
+filtering:
+  #file: "./data/file.csv"
+  nFeature_RNA: [200, 2000, 1]
+  nCount_RNA: [400, 20000, 1]
+  percent.mt: [0, 15, 1] 
+  expr: orig.HT_ID.global %in% c('Singlet')
+...
