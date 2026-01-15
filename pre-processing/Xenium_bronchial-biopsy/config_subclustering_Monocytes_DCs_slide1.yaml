@@ -1,0 +1,38 @@
+### config yaml for Spatial transcriptomics
+project_name: SaHe_5k_slide1_monocytes_subclustering
+output_dir: "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe1/re_segmentation/results/clustering/other_im_subclustering"
+# path to the Cell Ranger ouput from IGM
+input_expression: "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe1/re_segmentation/raw/outs/"
+metadata:
+  - "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe1/re_segmentation/results/clustering/SaHe_5k_slide1_run5_resegmentation_redo/.object_metadata_mean0.01_pct50_pc30.rds"
+metadata_donor:
+  # - "/home/donaldo/bioadhoc/spatial/SaHe/slide_5k_SaHe1/re_segmentation/info/metadata/SaHe_5k_slide1_md_donor_2.csv~orig.TMA_core"
+filtering:
+  subset:
+    expr: "nCount_Xenium > 3"
+    expre: "Xenium_snn_res.0.4 == '6'"
+  nSamples_expressed: 0.001 # % of cells in which that gene is present
+regress_var: [nCount_Xenium]
+norm: LogNormalize
+variable_features:
+  file: "no_file"
+  method: vst
+  nfeatures: 2000
+  percent: [40, 50, 55, 70, 100]  # iterated
+  mean.cutoff: [0.01, 8]
+  dispersion.cutoff: [1, Inf]
+resolution: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] # iterated during markers
+dim_reduction:
+  base: {type: pca, n_comp: 40, chosen_comp: [10,15,20,30,40]}
+  umap: {n.neighbors: 10, min.dist: 0.1}
+markers:
+  select: snn_res. # pattern in the metadata's columns. Redundant
+  test: MAST
+  avg_logFC: 0.25
+  p_val_adj: 0.05
+  to_plot: ['WDFY4', 'CPVL', 'SLAMF7', 'IRF8', 'CLEC9A', 'ANPEP', 'TAP2', 'TAP1', 'HNRNPH1', 'HNRNPD', 'SAMHD1', 'PKM', 'CLEC10A', 'FCER1A', 'CD1C', 'GRN', 'MAN2B1', 'IFNGR1', 'ALOX5', 'EEF1G', 'AXL', 'CTNND1', 'CXCR4', 'CSF1R', 'CD14']
+exec: /mnt/hpc-apps/R/4.3.3/bin/Rscript
+pipeline: /home/fcastaneda/bin/spatial_clustering/
+R_module: R/4.3.3 #if defined, it will use this module version to run the analysis, if not it will use your default
+cluster_config: /home/fcastaneda/bin/spatial_clustering/cluster_slurm.json #HPC resources definition
+conda_env: clustering_env #Compatible with Ciro's clustering env
