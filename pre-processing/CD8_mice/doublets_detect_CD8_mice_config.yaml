@@ -1,0 +1,14 @@
+---
+project_name: JaSh05_mouse
+input_matrix: "/home/donaldo/bioadhoc/JaSh/raw/cellranger_2/count/JaSh05_Mo_2_CD8_14D_Gex/outs/filtered_feature_bc_matrix"
+metadata: "/home/donaldo/bioadhoc/JaSh/results/qcontrolCD8/JaSh05_mouse/metadata_prefilter.rds"
+output_dir: "/home/donaldo/bioadhoc/JaSh/results/doubletCD8/"
+filters:
+  score: 0.3
+  doublet_rate: 0.06
+vars:
+  library: origlib
+  class: orig.HT_ID.global
+  dims: umap
+do_parallel: no
+...
