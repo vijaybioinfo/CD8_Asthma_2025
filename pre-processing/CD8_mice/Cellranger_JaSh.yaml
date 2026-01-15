@@ -1,25 +1,25 @@
 ---
-project: "JaSh05_mouse"
+project: "cellranger_Mo"
 run:
-  - "/mnt/NovaSeq/NV143-IGM"
-  - "/mnt/NovaSeq/NV144-IGM"
+  - "ftp://igm-storage.ucsd.edu/241023_LH00444_0223_A22JC7JLT4/"
+  - "ftp://igm-storage2.ucsd.edu/240923_LH00444_0203_A22HJFLLT4/"
 # folder with fastq files output from mkfastq or bcl2fastq; separate by commas if more than one
 fastqs_dir:
-  - "/home/donaldo/bioadhoc/JaSh/raw/NV143"
-  - "/home/donaldo/bioadhoc/JaSh/raw/NV144"
-output_dir: "/home/donaldo/bioadhoc/JaSh/raw/cellranger_2" # created if it doesn't exists
-samples: "JaSh" # sample sheet or a pattern to select samples from 'fastqs_dir'
+  - "/home/fcastaneda/fcastaneda-temp/data/NV144/raw/NV144"
+  - "/home/fcastaneda/fcastaneda-temp/data/NV143/igm-storage.ucsd.edu/240923_LH00444_0203_A22HJFLLT4"
+output_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/raw/cellranger" # created if it doesn't exists
+samples: "JaSh05" # sample sheet or a pattern to select samples from 'fastqs_dir'
 transcriptome: # Cell Ranger reference
   count: "/mnt/BioAdHoc/Groups/vd-vijay/references/refdata-cellranger-mm10-3.0.0"
   vdj: /mnt/BioAdHoc/Groups/vd-vijay/references/refdata-cellranger-vdj-GRCm38-alts-ensembl-3.1.0
 # You can give a sheet per sample or add a column 'library_pattern' with patterns
 # that can be found in the libraries' names where you used the set of barcodes
 feature_ref:
-  main: "/home/donaldo/bioadhoc/JaSh/info/fbarcodes2_JaSh.csv"
+  main: "/mnt/bioadhoc-temp/Groups/vd-vijay/fcastaneda/rnaseq-sc-standar/jaewoo/transfer_ot1/info/fbarcodes.csv"
 # Metadata with additional columns prefixed like aggr.NAME_OF_AGGR and values equal to 1
-aggregation: "/home/donaldo/bioadhoc/JaSh/info/metadata_library.csv"
+aggregation: "/mnt/bioadhoc-temp/Groups/vd-vijay/fcastaneda/rnaseq-sc-standar/jaewoo/transfer_ot1/info/metadata_library.csv"
 job: # PBS settings
-  template: "/home/donaldo/bin/cellranger_wrappeR/routine_template_donaldo_Slurm.sh"
+  template: "/home/fcastaneda/bin/cellranger_wrappeR/routine_template_emma2_Slurm.sh"
   walltime: {count: 50:00:00, vdj: 40:00:00, fbarcode: 24:00:00, aggr: 24:00:00}
   mem: {count: 70gb, vdj: 40gb, fbarcode: 32gb, aggr: 30gb}
   ppn: {count: 10, vdj: 4, fbarcode: 4, aggr: 6}
