@@ -1,8 +1,8 @@
 ---
-project_name: JaSh05_mouse
-input_matrix: "/home/donaldo/bioadhoc/JaSh/raw/cellranger_2/count/JaSh05_Mo_2_CD8_14D_Gex/outs/filtered_feature_bc_matrix"
-metadata: "/home/donaldo/bioadhoc/JaSh/results/qcontrolCD8/JaSh05_mouse/metadata_prefilter.rds"
-output_dir: "/home/donaldo/bioadhoc/JaSh/results/doubletCD8/"
+project_name: transfer_ot1_CD8
+input_matrix: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/raw/cellranger/count/JaSh05_Mo_2_CD8_14D_Gex/outs/filtered_feature_bc_matrix"
+metadata: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/results/qcontrol/transfer_ot1_CD8/metadata_prefilter.rds"
+output_dir: "/home/fcastaneda/fcastaneda-temp/rnaseq-sc-standar/jaewoo/transfer_ot1/results/doubdet/transfer_ot1_CD8"
 filters:
   score: 0.3
   doublet_rate: 0.06
